@@ -1,5 +1,3 @@
-import { getWeather } from "./api/weather";
-
 function App() {
   return (
     <>
