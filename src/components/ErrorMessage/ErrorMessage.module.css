@@ -1,0 +1,12 @@
+.errorMessage {
+  color: #e74c3c;
+  padding: 15px;
+  background-color: #fdecea;
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+.error-message button {
+  background-color: #e74c3c;
+  margin-top: 10px;
+}
