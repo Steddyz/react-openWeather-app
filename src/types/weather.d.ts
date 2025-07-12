@@ -5,10 +5,17 @@ export interface Weather {
   icon: string;
 }
 
-export interface currentWeather {
+export interface CurrentWeatherProp {
   dt: number;
   temp: number;
   feels_like: number;
   wind_speed: number;
   weather: Weather[];
+}
+
+export interface City {
+  name: string;
+  lat: number;
+  lot: number;
+  country: string;
 }

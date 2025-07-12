@@ -1,4 +1,5 @@
 import axios from "axios";
+import type { City } from "../types/weather";
 
 const API_KEY = import.meta.env.OPENWEATHER_API_KEY;
 
@@ -17,7 +18,7 @@ export const getWeather = async (lat: number, lon: number) => {
 
 export const searchCities = async (query: string) => {
   try {
-    const response = await axios.get(
+    const response = await axios.get<City[]>(
       `https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=${API_KEY}`
     );
     return response.data;
