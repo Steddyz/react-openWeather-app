@@ -19,3 +19,14 @@ export interface City {
   lot: number;
   country: string;
 }
+
+export interface DailyForecast {
+  dt: number;
+  temp: {
+    day: number;
+    night: number;
+  };
+  weather: Weather[];
+  wind_speed: number;
+  summary: string;
+}
