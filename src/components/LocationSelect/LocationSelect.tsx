@@ -46,7 +46,7 @@ const LocationSelect = ({ onSelect }: LocationSelectProps) => {
         <ul className={styles.citiesSuggestions}>
           {cities.map((city) => (
             <li
-              key={city.name}
+              key={`${city.lat}-${city.lon}`}
               className={styles.suggestionsInner}
               onClick={() => {
                 setQuery("");

@@ -11,16 +11,17 @@ export interface CurrentWeatherProp {
   feels_like: number;
   wind_speed: number;
   weather: Weather[];
+  name?: string;
 }
 
 export interface City {
   name: string;
   lat: number;
-  lot: number;
+  lon: number;
   country: string;
 }
 
-export interface DailyForecast {
+export interface dailyForecast {
   dt: number;
   temp: {
     day: number;
@@ -28,5 +29,36 @@ export interface DailyForecast {
   };
   weather: Weather[];
   wind_speed: number;
-  summary: string;
+  summary?: string;
+}
+
+export interface ForecastResponse {
+  list: ForecastItem[];
+}
+
+export interface ForecastItem {
+  dt: number;
+  main: {
+    temp: number;
+    feels_like: number;
+  };
+  weather: Weather[];
+  wind: {
+    speed: number;
+  };
+  dt_txt: string;
+}
+
+export interface WeatherData {
+  weather: Weather[];
+  main: {
+    temp: number;
+    feels_like: number;
+  };
+  wind: {
+    speed: number;
+  };
+  name: string;
+  dt: number;
+  daily: DailyForecast[];
 }

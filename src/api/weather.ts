@@ -1,15 +1,14 @@
 import axios from "axios";
-import type { City } from "../types/weather";
+import type { City, ForecastResponse, WeatherData } from "../types/weather";
 
-const API_KEY = import.meta.env.OPENWEATHER_API_KEY;
+const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
 
 export const getWeather = async (lat: number, lon: number) => {
   try {
     const response = await axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`
+      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=ru`
     );
-    console.log(response.data);
-    return response.data;
+    return response.data as WeatherData;
   } catch (error) {
     console.error("Error fetching weather data:", error);
     throw error;
@@ -24,6 +23,18 @@ export const searchCities = async (query: string) => {
     return response.data;
   } catch (error) {
     console.error("Error searching cities:", error);
+    throw error;
+  }
+};
+
+export const getForecast = async (lat: number, lon: number) => {
+  try {
+    const response = await axios.get<ForecastResponse>(
+      `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=ru`
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching forecast data:", error);
     throw error;
   }
 };

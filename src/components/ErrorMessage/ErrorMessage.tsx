@@ -1,5 +1,3 @@
-import React from "react";
-
 import styles from "./ErrorMessage.module.css";
 
 interface ErrorMessageProps {
@@ -11,7 +9,7 @@ const ErrorMessage = ({ message, onRetry }: ErrorMessageProps) => {
   return (
     <div className={styles.errorMessage}>
       <p>{message}</p>
-      {onRetry && <button>Попробовать ещё раз</button>}
+      {onRetry && <button onClick={onRetry}>Попробовать ещё раз</button>}
     </div>
   );
 };

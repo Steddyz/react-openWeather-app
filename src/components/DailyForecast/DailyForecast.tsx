@@ -1,9 +1,9 @@
-import type { DailyForecast } from "../../types/weather";
+import type { dailyForecast } from "../../types/weather";
 
 import styles from "./DailyForecast.module.css";
 
 interface DailyForecastProps {
-  forecast: DailyForecast[];
+  forecast: dailyForecast[];
 }
 
 const DailyForecast = ({ forecast }: DailyForecastProps) => {

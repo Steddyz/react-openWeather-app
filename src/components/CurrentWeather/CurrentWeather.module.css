@@ -1,5 +1,27 @@
 .currentWeather {
+  margin-top: 50px;
 }
 
-.weatherInfo {
+.weatherItem {
+  margin: 20px 0 20px 0;
+  font-size: 18px;
+}
+
+.title {
+  margin-top: 50px;
+}
+
+.lineBreak {
+  display: flex;
+  background-color: #fff;
+  height: 10px;
+  width: 100%;
+}
+
+.whiteBreak {
+  display: block;
+  height: 10px;
+  background-color: white;
+  border-radius: 12px;
+  width: 100%;
 }
